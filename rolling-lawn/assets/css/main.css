@@ -1,0 +1,849 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+a, a:focus, a:hover{
+    text-decoration: none;
+    font-style: normal;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: transparent;
+}
+input#huey {
+    float: left;
+    width: auto !important;
+    cursor: pointer;
+}
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform input,
+#msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    /*width: 100%;*/
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ff0000;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+    background: #ff0000;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 16px 5px;
+    margin: 0;
+    width: 89% !important;
+    margin-bottom: 20px;
+    border: 1px solid #ff0000;
+    margin-top: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+#msform .action-button-previous {
+
+    background: #ff0000;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 16px 5px;
+    margin: 0;
+    width: 89% !important;
+    margin-bottom: 10px;
+    border: 1px solid #ff0000;
+    margin-top: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+/* #msform .action-button:hover,
+#msform .action-button:focus {
+    background: transparent;
+    color: #ff0000;
+} */
+
+.firstStep .kostetDiv h2.fs-title{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+.firstStep .kostetDiv input {
+    font-size: 18px !important;
+    color: #0D0D0D !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+.firstStep input#nextBtn {
+    font-size: 19px !important;
+    color: #fff !important;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+.firstStep  .action-button:hover, .firstStep  .action-button:focus {
+    color: #ff0000;
+    opacity: 0.7;
+}
+
+
+
+/*headings*/
+.fs-title {
+    font-size: 19px !important;
+    text-transform: capitalize;
+    color: #2e2e2e !important;
+    margin-bottom: 15px !important;
+    letter-spacing: 0px;
+    font-weight: 900;
+    text-align: left;
+    /* padding: 25px 30px 0; */
+}
+.fs-title span {
+    margin-left: 10px;
+    color: #51bded;
+    font-size: 16px;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 0;
+    overflow: hidden;
+    counter-reset: step;
+    background: #f5f5fa;
+    padding: 10px 0 8px;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 14px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 15px;
+    height: 15px;
+    line-height: 20px;
+    display: block;
+    font-size: 0;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 3px auto 10px auto;
+    border: 2px solid #329b46;
+    z-index: 999999999;
+    position: inherit;
+    margin-bottom: 5px;
+}
+
+/*progressbar connectors*/
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    z-index: 1;
+}
+
+#progressbar li.active:before {
+    background: #329b46;
+    color: white;
+}
+
+#progressbar li.active:after {
+    background: #329b46;
+}
+
+fieldset.firstStep input {
+    width: 49% !important;
+    display: inline-block;
+    margin: 0;
+}
+
+.stepPointsText {
+    background: #f5f5fa;
+    text-align: left;
+    padding: 20px 30px;
+    display: inline-block;
+}
+
+.stepPointsText ul {
+    margin-bottom: 0;
+}
+
+.stepPointsText ul li {
+    color: #0D0D0D;
+    font-size: 16px;
+    font-weight: 600;
+    list-style: none;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: flex-start;
+    display: inline-flex;
+    margin-bottom: 8px;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.stepPointsText ul li::before {
+    content: '\f058';
+    margin-right: 5px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-family: "FontAwesome";
+    color: #11c509;
+    font-size: 25px;
+    line-height: 25px;
+    margin-top: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    display: inline-flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
+.ratingNumber {
+    margin-left: 10px;
+    margin-top: 28px !important;
+}
+
+.ratingNumber span {
+    font-weight: 800;
+    color: #0D0D0D;
+}
+h3, h4 {
+    margin-bottom: 0px !important;
+}
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
+.universalBox {
+    width: 100%;
+    display: inline-block;
+    padding: 0px 30px;
+    margin-bottom: 0px;
+}
+
+.imageBox {
+    float: left;
+    width: 150px;
+    height: auto;
+}
+
+.imageBox img {
+    width: 100%;
+}
+
+.boxContent {
+    text-align: left;
+    padding: 8px 20px 5px 20px;
+    float: right;
+    width: 55%;
+    width: calc(100% - 150px);
+}
+
+h3.prodcutname {
+    font-size: 20px;
+}
+h4.proPrice {
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+}
+h4.proPrice span {
+    font-weight: 400;
+    font-size: 15px;
+}
+h5.proSubtittle {
+    color: #329b46;
+    font-size: 16px;
+    font-weight: 700;
+}
+.lieferterminRadios {
+    padding: 0 30px;
+}
+
+.radioLeft {
+    width: 60%;
+    text-align: left;
+    display: inline-block;
+}
+
+.radioRight {
+    width: 40%;
+    text-align: end;
+    float: right;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.radioLeft input.dateRadio {
+    float: left;
+    width: auto !important;
+}
+
+.radioLeft span {
+    display: block;
+    text-align: left;
+}
+
+label.secondLable {
+    display: block;
+    text-decoration: line-through;
+    font-size: 16px;
+}
+.radioRight span {
+    font-weight: 900;
+    font-size: 16px;
+}
+.radioLeft label {
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0;
+    color: #666666;
+}
+.formGroup.winzePrice .radioLeft label.secondLable {
+    text-decoration: none;
+}
+.formGroup.winzePrice .radioRight span {
+    color: #ff0000;
+}
+
+.radioLeft input {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.formGroup {
+    border: 1px solid #e2e2e2;
+    padding: 5px 15px;
+    border-bottom: 0;
+    vertical-align: middle;
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+}
+
+.formGroup:last-child {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.dugerMitRight {
+    width: 100%;
+    padding: 0 20px 15px 20px;
+}
+
+.HeaderTop {
+    display: inline-flex;
+    float: left;
+    width: 100%;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderTop h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #0D0D0D;
+}
+
+.HeaderTop a {
+    background: #ff0000;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none !important;
+    margin-top: 10px;
+}
+
+.clearAll {
+    clear: both;
+}
+
+.dugerMitRight h4 {
+    font-size: 14px;
+    text-align: left;
+    font-weight: 900;
+    margin: 2px 0;
+    color: #0D0D0D;
+    font-family: 'Lato', sans-serif;
+}
+
+.dugerMitRight h4 span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666666;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.dugerMitRight p {
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #0D0D0D;
+}
+
+.dugerMitRight p.greenText {
+    color: #329B46;
+    font-weight: 700;
+    font-size: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.dugerMitInner .formGroup {
+    padding: 0;
+}
+
+.dugerMitleft {
+    border-right: 1px solid #e2e2e2;
+    height: 100%;
+    display: inline-block;
+    line-height: 87px;
+    padding: 20px;
+}
+
+.dugerMitleft span {
+    font-size: 40px;
+}
+
+.dugerMitInner {
+    padding: 0 30px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* ==========================Today================= */
+.kostetDiv {
+    padding: 25px 30px 0;
+}
+.spatereDropdown {
+    border: 1px solid #e2e2e2;
+    text-align: left;
+    padding: 2px 15px;
+}
+.spatereDropdown h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #44a1e9;
+}
+
+.spatereDropdown h4::before {
+    content: "\f078";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+}
+.infos {
+    text-align: left;
+    padding: 10px 20px;
+    border: 1px solid #e2e2e2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    width: fit-content;
+    border-radius: 30px;
+    background: #f5f5fa;
+}
+.infos h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #44a1e9;
+    margin: 0;
+}
+.infos h4:before {
+    content: "\f05a";
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+    font-size: 17px;
+}
+.loadMoreSec {
+    padding: 0 30px;
+    margin-top: 0px;
+}
+.loadMoreSec .spatereDropdown {
+    border-top: 0;
+}
+
+
+@media only screen and (max-width: 650px) {
+    .imageBox {
+        width: 100%;
+    }
+
+    .boxContent {
+        width: 100%;
+    }
+
+    .dugerMitInner,
+    .lieferterminRadios,
+    .universalBox,
+    .fs-title {
+        padding: 0 20px;
+    }
+
+    .boxContent {
+        padding-left: 0;
+    }
+
+    h3.prodcutname {
+        font-size: 20px;
+    }
+
+    .dugerMitleft {
+        padding: 10px;
+    }
+}
+
+
+.lieferterminRadios.checkSpecial {
+    margin-top: 10px;
+}
+.lieferterminRadios.checkSpecial .formGroup {
+    padding: 0 30px 0px 0px;
+}
+.checkBoxG {
+    width: 50px;
+    height: 50px;
+    background: #329b46;
+    line-height: 55px;
+    margin-right: 15px;
+}
+.checkBoxG i {
+    color: #fff;
+    font-size: 20px;
+    line-height: 38px;
+}
+.bottomPrice {
+    padding: 0 30px;
+    text-align: left;
+    margin-top: 20px;
+}
+.bottomPrice h3 {
+    font-size: 20px;
+    font-weight: 300;
+}
+.bottomPrice h4.proPrice {
+    margin-bottom: 0;
+}
+.HeaderTop h3::after {
+    content: "\f05a";
+    font-family: 'FontAwesome';
+    margin-left: 5px;
+    color: #51bded;
+}
+.dugerMitRight p.greenText::before {
+    content: "\f00c";
+    margin-right: 4px;
+    font-family: 'FontAwesome';
+    font-weight: 500;
+}
+
+
+
+h2#headingOne {
+    margin-bottom: 0px !important;
+        padding: 0 30px;
+}
+/*==================*/
+button.accordion-button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #44a1e9;
+    border: 1px solid #e2e2e2;
+    padding: 16px;
+}
+div#accordionExample {
+    padding: 0 30px;
+}
+
+.accordion-header .accordion-button::before {
+    content: "\f078";
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+    color: #44a1e9;
+}
+.accordion-item {
+    padding: 0;
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+.accordion-item:last-child {
+    border-top: 0;
+}
+
+
+/* =============================Form Validation CSS================= */
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+
+}
+
+.form-control.success input {
+    border-color: var(--succes-color);
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form button {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+span#ValiMengein, span#ValiMengein1 {
+    float: left;
+    width: 50%;
+    text-align: left;
+    color: #FF0000;
+    font-size: 13px;
+}
+
+.secondStep .fs-title, .thirdStep .fs-title{
+    float: left;
+}
+.secondStep a.backBtn, .thirdStep a.backBtn {
+    float: left;
+    text-align: left;
+    color: #0080E2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100px !important;
+}
+ul#progressbar {
+    margin-left: auto !important;
+}
+#testDiv {
+    height: 242px;
+    /* width: 400px; */
+    /* background: #c0c0c0; */
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.sell_wrap {
+    display: block;
+    width: 100%;
+}
+.HeaderTop h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+}
+.accordion-button.up::before {
+    content: "\f077";
+     font-family: 'FontAwesome'; 
+    margin-right: 10px;
+    color: #44a1e9;
+}
+h2#headingOne1 {
+    padding: 0 30px;
+}
+.formGroup{
+  display: none;
+}
+
+#loadMore {
+  color: #44a1e9;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#showLess {
+    display: inline-block;
+  color: #44a1e9;
+  cursor: pointer;
+}
+
+#loadMore:hover,
+#showLess:hover {
+  color: black;
+}
+.form_Groups, .formGroup1 {
+    border: 1px solid #e2e2e2;
+    vertical-align: middle;
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+    padding: 0;
+}
